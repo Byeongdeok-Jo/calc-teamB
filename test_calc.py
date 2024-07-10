@@ -3,6 +3,10 @@ from calc import Calc
 
 
 class TestCalc(TestCase):
+  
+    def test_get_gom(self):
+        sut = Calc()
+        self.assertEqual(sut.get_gom(2, 3), 6)
 
     def test_get_minus(self):
         calc = Calc()
@@ -33,3 +37,4 @@ class TestCalc(TestCase):
         calc = Calc()
         self.assertEqual(15, calc.getSumSum(3, 5, 7))
         self.assertEqual(-8, calc.getSumSum(-3, -5, 0))
+
