@@ -11,3 +11,6 @@ class Calc:
     def getSumSum(self, num01, num02, num03):
         return num01 + num02 + num03
 
+
+    def get_sum(self, operand1, operand2):
+        return operand1 + operand2
