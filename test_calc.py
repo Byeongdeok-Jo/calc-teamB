@@ -1,11 +1,35 @@
 from unittest import TestCase
 from calc import Calc
 
-class TestCalc(TestCase):
-    def setUp(self):
-        super().setUp()
-        self.calc = Calc()
 
+class TestCalc(TestCase):
+
+    def test_get_minus(self):
+        calc = Calc()
+        self.assertEqual(0, calc.get_minus(5, 5))
+        self.assertEqual(2, calc.get_minus(5, 3))
+        self.assertEqual(-1, calc.get_minus(5, 6))
+        
+    def test_get_zegop_plus(self):
+        cal = Calc()
+        self.assertEqual(0, cal.get_zegop(0))
+        self.assertEqual(1, cal.get_zegop(1))
+        self.assertEqual(4, cal.get_zegop(2))
+        self.assertEqual(9, cal.get_zegop(3))
+        self.assertEqual(16, cal.get_zegop(4))
+        self.assertEqual(25, cal.get_zegop(5))
+        self.assertEqual(100, cal.get_zegop(10))
+
+    def test_get_zegop_minus(self):
+        cal = Calc()
+        self.assertEqual(1, cal.get_zegop(-1))
+        self.assertEqual(4, cal.get_zegop(-2))
+        self.assertEqual(9, cal.get_zegop(-3))
+        self.assertEqual(16, cal.get_zegop(-4))
+        self.assertEqual(25, cal.get_zegop(-5))
+        self.assertEqual(100, cal.get_zegop(-10))
+        
     def test_getSumSum(self):
-        self.assertEqual(15, self.calc.getSumSum(3, 5, 7))
-        self.assertEqual(-8, self.calc.getSumSum(-3, -5, 0))
+        calc = Calc()
+        self.assertEqual(15, calc.getSumSum(3, 5, 7))
+        self.assertEqual(-8, calc.getSumSum(-3, -5, 0))
