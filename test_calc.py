@@ -1,6 +1,7 @@
 from unittest import TestCase
 from calc import Calc
 
+
 class TestCalc(TestCase):
     def test_get_zegop_plus(self):
         cal = Calc()
@@ -11,3 +12,12 @@ class TestCalc(TestCase):
         self.assertEqual(16, cal.get_zegop(4))
         self.assertEqual(25, cal.get_zegop(5))
         self.assertEqual(100, cal.get_zegop(10))
+
+    def test_get_zegop_minus(self):
+        cal = Calc()
+        self.assertEqual(1, cal.get_zegop(-1))
+        self.assertEqual(4, cal.get_zegop(-2))
+        self.assertEqual(9, cal.get_zegop(-3))
+        self.assertEqual(16, cal.get_zegop(-4))
+        self.assertEqual(25, cal.get_zegop(-5))
+        self.assertEqual(100, cal.get_zegop(-10))
