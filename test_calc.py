@@ -1,14 +1,20 @@
 from unittest import TestCase
 from calc import Calc
 
-
 class TestCalc(TestCase):
+    def test_get_sum(self):
+        sut = Calc()
+        test_cases = [(2, 3), (6, 8), (10, 15), (-1, -5)]
+        for operand1, operand2 in test_cases:
+            with self.subTest(f"get_sum subtest: {operand1} + {operand2}"):
+                self.assertEqual(sut.get_sum(operand1, operand2), operand1+operand2)
+
     def test_get_minus(self):
         calc = Calc()
         self.assertEqual(0, calc.get_minus(5, 5))
         self.assertEqual(2, calc.get_minus(5, 3))
         self.assertEqual(-1, calc.get_minus(5, 6))
-        
+
     def test_get_zegop_plus(self):
         cal = Calc()
         self.assertEqual(0, cal.get_zegop(0))
