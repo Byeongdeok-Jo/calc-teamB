@@ -1,3 +1,4 @@
 
 class Calc:
-    pass
+    def get_gom(self, a, b):
+        return a * b
